@@ -7,18 +7,71 @@
 </head>
 
 <style>
-    h1,h2 {font-family:'Trebuchet MS';}
+    body {
+        font-family:'Trebuchet MS'; 
+        margin: 0;
+        background-color: #7dcfb6;
+        }
+    .top-bar {
+            background-color: #1d4e89;
+            color: white;
+            padding: 20px;
+            text-align:center;
+            font-size: xx-large;
+        }
+        .header {
+            background-color: #1d4e89;
+            color: white;
+            padding: 20px;
+        }
+        .container-wrapper {
+            display: flex; /* Use flexbox to arrange containers side by side */
+            justify-content: space-between; /*Add space between containers */
+            flex-wrap: wrap;
+        }
+        .container {
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            padding: 20px;
+            flex: 1;
+            max-width: 50%;
+        }
+        h1 {
+            color: #1d4e89;
+        }
+        h2 {
+            color: #1d4e89;
+        }
+        .total {
+            margin: 20px 0;
+            border-radius: 10px;
+            padding: 10px 10px 10px;
+            background-color: #fbd1a2;
+            text-align: center;
+            font-size: large;
+        }
+        .movie-list {
+            text-align: center;
+        }
+        ul {
+            list-style-type: none;
+        }
 </style>
 <body>
-    <h1>Movie Management System</h1>
-    <div id="result">
-        <h2>Movies List</h2>
-        <ul id="movies-list"></ul>
-        <p id="total-movies"></p>
-
-        <h2>High Rated Movies</h2>
-        <ul id="high-rated-list"></ul>
-        <p id="total-matches"></p>
+    <div class="top-bar">Movie Management System</div>
+    <div class="container-wrapper">
+        <div class="container" id="result">
+            <h2>Movies List</h2>
+            <ul class="movie-list" id="movies-list"></ul>
+            <p class="total" id="total-movies"></p>
+        </div>
+        <div class="container">
+            <h2>High Rated Movies</h2>
+            <ul class="movie-list" id="high-rated-list"></ul>
+            <p class="total" id="total-matches"></p>
+        </div>
     </div>
     <script src="script.js"> </script>
 </body>

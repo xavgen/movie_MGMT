@@ -31,14 +31,19 @@ let printMovies = () => {
 
   allMovies.forEach((movie, index) => {
     const listItem = document.createElement("li");
-    listItem.textContent = `${index + 1}. Title: ${movie.title}, Rating: ${
+    listItem.innerHTML = `<div style="background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #00b2ca;
+    margin: 10px;
+    padding: 10px;">
+    <b>Title:</b> ${movie.title}<br><b>Rating:</b> ${
       movie.rating
-    }, Watched: ${movie.haveWatched ? "Yes" : "No"}`;
+    }<br><b>Watched:</b> ${movie.haveWatched ? "Yes" : "No"} </p><div>`;
     moviesList.appendChild(listItem);
   });
 
   const totalMovies = document.getElementById("total-movies");
-  totalMovies.textContent = `Total number of movies: ${allMovies.length}`;
+  totalMovies.innerHTML = `<b>Total number of movies:</b> ${allMovies.length}`;
 };
 
 //Display only the movies that has a rating higher than rating(argument)
@@ -59,14 +64,16 @@ let highRatings = (rating) => {
 
   highRatedMovies.forEach((movie, index) => {
     const listItem = document.createElement("li");
-    listItem.textContent = `${index + 1}. Title: ${movie.title}, Rating: ${
-      movie.rating
-    }`;
+    listItem.innerHTML = `<div style="background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px #00b2ca;
+    margin: 10px;
+    padding: 10px;"><b>Title:</b> ${movie.title}<br><b>Rating:</b> ${movie.rating} <p></p></div>`;
     highRatedList.appendChild(listItem);
   });
 
   const totalMatches = document.getElementById("total-matches");
-  totalMatches.textContent = `Total matches: ${matches}`;
+  totalMatches.innerHTML = `<b>Total matches:</b> ${matches}`;
 };
 
 //Toggle the 'haveWatched' property of the specified movie
